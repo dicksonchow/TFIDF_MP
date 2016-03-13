@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="TFIDF_MP" />
+        <module name="TFIDF_MR" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="TFIDF_MP" target="1.5" />
+      <module name="TFIDF_MR" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
