@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TFIDF_MP.iml" filepath="$PROJECT_DIR$/TFIDF_MP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TFIDF_MR.iml" filepath="$PROJECT_DIR$/TFIDF_MR.iml" />
     </modules>
   </component>
 </project>
