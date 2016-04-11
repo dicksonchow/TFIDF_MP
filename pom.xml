@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cloud.computing.tfidf</groupId>
-    <artifactId>TFIDF_MP</artifactId>
+    <artifactId>TFIDF_MR</artifactId>
     <version>1.0</version>
 
     <dependencies>
