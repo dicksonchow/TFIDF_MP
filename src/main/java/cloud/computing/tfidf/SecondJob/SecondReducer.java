@@ -28,6 +28,7 @@ public class SecondReducer extends Reducer<Text, Text, Text, Text>
 
         while (i.hasNext()) {
             Map.Entry me = (Map.Entry) i.next();
+            // (filename:word, count_of_a_word:total_word_count)
             context.write(new Text(key + ":" + me.getKey()), new Text(me.getValue() + ":" + count));
         }
     }
