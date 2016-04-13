@@ -3,6 +3,7 @@ package cloud.computing.tfidf;
 import cloud.computing.tfidf.FirstJob.FirstMapper;
 import cloud.computing.tfidf.FirstJob.FirstReducer;
 import cloud.computing.tfidf.FourthJob.FourthMapper;
+import cloud.computing.tfidf.FourthJob.FourthReducer;
 import cloud.computing.tfidf.SecondJob.SecondMapper;
 import cloud.computing.tfidf.SecondJob.SecondReducer;
 import cloud.computing.tfidf.ThirdJob.ThirdMapper;
@@ -10,7 +11,7 @@ import cloud.computing.tfidf.ThirdJob.ThirdReducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.ContentSummary;
 import org.apache.hadoop.fs.FileSystem;
-import org.apache.hadoop.io.DoubleWritable;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.IntWritable;
@@ -122,14 +123,16 @@ public class App
 
     public int executeFourthMapReduce(String input, String output) throws Exception {
         Job job = Job.getInstance(conf);
+        job.addFileToClassPath(new Path("json-simple-1.1.1.jar"));
 
         job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(DoubleWritable.class);
+        job.setMapOutputValueClass(Text.class);
 
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(DoubleWritable.class);
+        job.setOutputValueClass(NullWritable.class);
 
         job.setMapperClass(FourthMapper.class);
+        job.setReducerClass(FourthReducer.class);
 
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
