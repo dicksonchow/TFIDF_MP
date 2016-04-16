@@ -63,6 +63,7 @@ public class App
 
     public int executeFirstMapReduce(String input, String output) throws Exception {
         Job job = Job.getInstance(conf);
+        job.setJobName("First MapReduce");
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
@@ -83,6 +84,7 @@ public class App
 
     public int executeSecondMapReduce(String input, String output) throws Exception {
         Job job = Job.getInstance(conf);
+        job.setJobName("Second MapReduce");
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
@@ -103,6 +105,7 @@ public class App
 
     public int executeThirdMapReduce(String input, String output) throws Exception {
         Job job = Job.getInstance(conf);
+        job.setJobName("Third MapReduce");
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
@@ -123,6 +126,7 @@ public class App
 
     public int executeFourthMapReduce(String input, String output) throws Exception {
         Job job = Job.getInstance(conf);
+        job.setJobName("Fourth MapReduce");
         job.addFileToClassPath(new Path("json-simple-1.1.1.jar"));
 
         job.setMapOutputKeyClass(Text.class);
